@@ -3,30 +3,26 @@ using UnityEngine;
 
 public class NoteController : MonoBehaviour
 {
-    public GameObject notePrefab;
-    public Transform leftSpawnPoint; // 왼쪽에서 노트가 생성될 위치
-    public Transform rightSpawnPoint; // 오른쪽에서 노트가 생성될 위치
-    public float spawnInterval = 2.0f; // 노트 생성 간격
+    public GameObject notePrefab; // 생성할 노트 프리팹
+    public Transform[] spawnPoints;  // 노트가 생성될 위치 배열
+    public float spawnInterval = 2f; // 노트 생성 간격 (초)
 
     void Start()
     {
+        // 일정 간격으로 노트를 생성하는 코루틴을 시작합니다.
         StartCoroutine(SpawnNotes());
     }
 
-    private IEnumerator SpawnNotes()
+    IEnumerator SpawnNotes()
     {
         while (true)
         {
-            // 왼쪽과 오른쪽에서 번갈아 가며 노트 생성
-            SpawnNoteAt(leftSpawnPoint);
-            yield return new WaitForSeconds(spawnInterval / 2);
-            SpawnNoteAt(rightSpawnPoint);
-            yield return new WaitForSeconds(spawnInterval / 2);
+            foreach (Transform spawnPoint in spawnPoints)
+            {
+                // 노트를 생성합니다.
+                Instantiate(notePrefab, spawnPoint.position, spawnPoint.rotation);
+            }
+            yield return new WaitForSeconds(spawnInterval);
         }
-    }
-
-    private void SpawnNoteAt(Transform spawnPoint)
-    {
-        Instantiate(notePrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

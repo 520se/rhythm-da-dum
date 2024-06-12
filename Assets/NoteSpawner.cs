@@ -1,6 +1,7 @@
 using MixedReality.Toolkit;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
@@ -12,51 +13,107 @@ public class NoteSpawner : MonoBehaviour
     public Transform leftTargetPosition;
     public Transform rightTargetPosition;
     public AudioSource audioSource;
-    public NotePatternData patternData;
-    public float spawnInterval = 2.0f;
+    public string notePatternFilePath;
+    public float songStartDelay = 2.0f;
 
-    private int currentPatternIndex = 0;
+    private List<NoteData> noteTimes;
+    private int currentNoteIndex = 0;
+    private bool isSongStarted = false;
 
     void Start()
     {
-        StartCoroutine(SpawnNotes());
+        //
     }
 
-    IEnumerator SpawnNotes()
+    void Update()
     {
-        while (true)
-        {
-            // 왼쪽 위치에서 leftNotePrefab 생성 및 이동 설정
-            SpawnNoteAt(leftSpawnPosition, leftNotePrefab, leftTargetPosition);
-            yield return new WaitForSeconds(spawnInterval / 2);
+        if (!isSongStarted)
+            return;
 
-            // 오른쪽 위치에서 rightNotePrefab 생성 및 이동 설정
-            SpawnNoteAt(rightSpawnPosition, rightNotePrefab, rightTargetPosition);
-            yield return new WaitForSeconds(spawnInterval / 2);
+        double dspTime = AudioSettings.dspTime;
+
+        // 현재 시간보다 이전에 생성해야 할 노트가 있는지 확인
+        while (currentNoteIndex < noteTimes.Count && dspTime >= noteTimes[currentNoteIndex].time)
+        {
+            NoteData noteData = noteTimes[currentNoteIndex];
+            Transform spawnPosition = noteData.position == "L" ? leftSpawnPosition : rightSpawnPosition;
+            GameObject notePrefab = noteData.position == "L" ? leftNotePrefab : rightNotePrefab;
+            Transform targetPosition = noteData.position == "L" ? leftTargetPosition : rightTargetPosition;
+
+            SpawnNoteAt(spawnPosition, notePrefab, targetPosition);
+
+            // 생성된 노트의 인덱스를 증가시킴
+            currentNoteIndex++;
+        }
+    }
+    //void Update()
+    //{
+    //    if (!isSongStarted)
+    //        return;
+
+    //    double dspTime = AudioSettings.dspTime;
+
+    //    if (currentNoteIndex < noteTimes.Count && dspTime >= noteTimes[currentNoteIndex].time)
+    //    {
+    //        NoteData noteData = noteTimes[currentNoteIndex];
+    //        Transform spawnPosition = noteData.position == "L" ? leftSpawnPosition : rightSpawnPosition;
+    //        GameObject notePrefab = noteData.position == "L" ? leftNotePrefab : rightNotePrefab;
+    //        Transform targetPosition = noteData.position == "L" ? leftTargetPosition : rightTargetPosition;
+
+    //        SpawnNoteAt(spawnPosition, notePrefab, targetPosition);
+
+    //        currentNoteIndex++;
+    //    }
+    //}
+
+    public void StartSpawning()
+    {
+        Debug.Log($"Starting to spawn notes with pattern file: {notePatternFilePath}");
+        LoadNoteTimes(notePatternFilePath);
+        StartCoroutine(StartSongWithDelay(songStartDelay));
+    }
+
+    IEnumerator StartSongWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (audioSource.clip == null)
+        {
+            Debug.LogError("Audio clip is null. Cannot play song.");
+            yield break;
+        }
+        Debug.Log("Starting song playback.");
+        audioSource.Play();
+        isSongStarted = true;
+    }
+
+    private void LoadNoteTimes(string filePath)
+    {
+        noteTimes = new List<NoteData>();
+        foreach (var line in File.ReadAllLines(filePath))
+        {
+            string[] parts = line.Split(',');
+            if (parts.Length == 2 && float.TryParse(parts[0], out float time))
+            {
+                noteTimes.Add(new NoteData { time = time, position = parts[1] });
+            }
+            else
+            {
+                Debug.LogError($"Invalid line in note pattern file: {line}");
+            }
         }
 
-        // while (currentPatternIndex < patternData.notes.Count)
-        // {
-        //     NoteData noteData = patternData.notes[currentPatternIndex];
-        //     yield return new WaitForSeconds(noteData.time);
-
-        //     GameObject notePrefab = (noteData.position == "L") ? leftNotePrefab : rightNotePrefab;
-        //     Vector3 spawnPosition = (noteData.position == "L") ? leftSpawnPosition.position : rightSpawnPosition.position;
-
-        //     GameObject note = Instantiate(notePrefab, spawnPosition, Quaternion.identity);
-        //     note.GetComponent<NoteMover>().SetTargetGameObject(noteData.targetGameObject);
-
-        //     currentPatternIndex++;
-        // }
+        noteTimes.Sort((a, b) => a.time.CompareTo(b.time));
+        Debug.Log($"Loaded {noteTimes.Count} notes from pattern file.");
     }
 
     private void SpawnNoteAt(Transform spawnPoint, GameObject notePrefab, Transform targetPosition)
     {
-        GameObject note = Instantiate(notePrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        GameObject note = Instantiate(notePrefab, spawnPoint.position, spawnPoint.rotation);
         NoteMover noteMover = note.GetComponent<NoteMover>();
         if (noteMover != null)
         {
             noteMover.targetPosition = targetPosition;
         }
+        Debug.Log($"Spawned note at {spawnPoint.position} moving to {targetPosition.position}");
     }
 }

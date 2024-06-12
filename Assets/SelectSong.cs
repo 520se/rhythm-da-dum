@@ -1,22 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using MixedReality.Toolkit;
 
 public class SelectSong : MonoBehaviour
 {
     public NoteSpawner noteSpawner;
     public AudioSource audioSource;
-    public Button volcanoButton; // Unity UI Button component
-    public Button songButton2; // Unity UI Button component
-    public Button songButton3; // Unity UI Button component
-    public Button songButton4; // Unity UI Button component
+
+    public StatefulInteractable volcanoButton;
+    public StatefulInteractable songButton2;
+    public StatefulInteractable songButton3;
+    public StatefulInteractable songButton4;
 
     private Dictionary<string, string> songFilePaths = new Dictionary<string, string>
     {
-        { "volcano", "Assets/NoteTimings/volcano.txt" },
-        { "Song2", "Assets/NoteTimings/song2.txt" },
-        { "Song3", "Assets/NoteTimings/song3.txt" },
-        { "Song4", "Assets/NoteTimings/song4.txt" }
+        { "volcano", "Assets/NotePatterns/volcano.txt" },
+        { "Song2", "Assets/NotePatterns/song2.txt" },
+        { "Song3", "Assets/NotePatterns/song3.txt" },
+        { "Song4", "Assets/NotePatterns/song4.txt" }
     };
 
     private Dictionary<string, string> audioFilePaths = new Dictionary<string, string>
@@ -27,27 +29,53 @@ public class SelectSong : MonoBehaviour
         { "Song4", "Audio/Song4" }
     };
 
-    //void Start()
-    //{
-    //    volcanoButton.onClick.AddListener(() => OnSongSelected("volcano"));
-    //    songButton2.onClick.AddListener(() => OnSongSelected("Song2"));
-    //    songButton3.onClick.AddListener(() => OnSongSelected("Song3"));
-    //    songButton4.onClick.AddListener(() => OnSongSelected("Song4"));
-    //}
+    void Start()
+    {
+        volcanoButton.OnClicked.AddListener(() => OnSongSelected("volcano"));
+        songButton2.OnClicked.AddListener(() => OnSongSelected("Song2"));
+        songButton3.OnClicked.AddListener(() => OnSongSelected("Song3"));
+        songButton4.OnClicked.AddListener(() => OnSongSelected("Song4"));
+    }
 
-    //void OnSongSelected(string songName)
-    //{
-    //    if (songFilePaths.TryGetValue(songName, out string filePath))
-    //    {
-    //        noteSpawner.noteTimingFilePath = filePath;
-    //    }
+    public void OnSongSelected(string songName)
+    {
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource is not assigned.");
+            return;
+        }
 
-    //    if (audioFilePaths.TryGetValue(songName, out string audioPath))
-    //    {
-    //        AudioClip selectedClip = Resources.Load<AudioClip>(audioPath); // assuming audio files are in Resources/Audio
-    //        audioSource.clip = selectedClip;
-    //    }
+        Debug.Log($"Song selected: {songName}");
 
-    //    noteSpawner.StartSpawning();
-    //}
+        if (songFilePaths.TryGetValue(songName, out string filePath))
+        {
+            noteSpawner.notePatternFilePath = filePath;
+            Debug.Log($"Note pattern file path set to: {filePath}");
+        }
+        else
+        {
+            Debug.LogError($"No note pattern file path found for song: {songName}");
+        }
+
+        if (audioFilePaths.TryGetValue(songName, out string audioPath))
+        {
+            AudioClip selectedClip = Resources.Load<AudioClip>(audioPath);
+            if (selectedClip != null)
+            {
+                audioSource.clip = selectedClip;
+                noteSpawner.audioSource = audioSource; // NoteSpawner의 audioSource에 할당
+                Debug.Log($"Audio clip loaded: {audioPath}");
+            }
+            else
+            {
+                Debug.LogError($"Failed to load audio clip: {audioPath}");
+            }
+        }
+        else
+        {
+            Debug.LogError($"No audio file path found for song: {songName}");
+        }
+
+        noteSpawner.StartSpawning();
+    }
 }

@@ -798,7 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteSpawner: {fileID: 1955211579}
   audioSource: {fileID: 556679369}
-  volcanoButton: {fileID: 0}
+  volcanoButton: {fileID: 2089341440}
   songButton2: {fileID: 1244748486}
   songButton3: {fileID: 2047594132}
   songButton4: {fileID: 1680770103}
@@ -3893,7 +3893,7 @@ MonoBehaviour:
   rightTargetPosition: {fileID: 698641645}
   audioSource: {fileID: 0}
   notePatternFilePath: 
-  songStartDelay: 5
+  songStartDelay: 3
 --- !u!4 &1955211580
 Transform:
   m_ObjectHideFlags: 0
@@ -4565,6 +4565,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6b351a67ceb69140b199996bbbea156, type: 3}
+--- !u!114 &2089341440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8376646494505211226, guid: c6b351a67ceb69140b199996bbbea156, type: 3}
+  m_PrefabInstance: {fileID: 1104915760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e8a7644144f8419bb881ad588ed0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7515576063752536524
 PrefabInstance:
   m_ObjectHideFlags: 0

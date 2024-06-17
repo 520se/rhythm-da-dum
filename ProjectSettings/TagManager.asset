@@ -13,6 +13,11 @@ TagManager:
   - R_ring
   - R_little
   - Drum
+  - L_note
+  - R_note
+  - R
+  - L
+  - Note
   layers:
   - Default
   - TransparentFX

@@ -14,14 +14,23 @@ public class NoteMover : MonoBehaviour
             // 현재 위치에서 목표 위치로 이동
             transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime);
 
-            // 목표 위치에 도달하면 게임 오브젝트를 제거
+            // 목표 위치에 도달하면 "Bad" 등급으로 판정하고 게임 오브젝트를 제거
             if (Vector3.Distance(transform.position, targetPosition.position) < 0.01f)
             {
+                HandleMissedNote();
                 Destroy(gameObject);
             }
         }
     }
+
+    private void HandleMissedNote()
+    {
+        Debug.Log("Bad!");
+        // 여기에서 "Bad" 등급으로 판정하는 추가 로직을 넣을 수 있습니다.
+    }
 }
+
+
 
 //using GLTFast.Schema;
 //using System.Collections;

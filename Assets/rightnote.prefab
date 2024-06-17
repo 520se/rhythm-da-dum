@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1922517573094408508}
   - component: {fileID: 4416571916512261622}
   - component: {fileID: 851422951206430451}
+  - component: {fileID: -8286320492618118263}
   m_Layer: 0
   m_Name: rightnote
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
   moveSpeed: 0.5
+--- !u!114 &-8286320492618118263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759066865371337763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac7fac4ea3b57a4d99f08a625b4dd7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteType: 1

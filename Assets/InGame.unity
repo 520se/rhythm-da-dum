@@ -3281,13 +3281,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drum: {fileID: 0}
   taikosound: {fileID: 8300000, guid: 73d61889a9b37db49bd28114a60b3c91, type: 3}
-  multipleCollisionTime: 0.1
+  multipleCollisionTime: 0.3
   leftJudgementLine: {fileID: 1219533990}
   rightJudgementLine: {fileID: 1059190141}
   perfectThreshold: 0.05
   greatThreshold: 0.07
-  goodThreshold: 1
-  collisionThreshold: 0.4
+  goodThreshold: 0.1
+  collisionThreshold: 0.3
 --- !u!54 &1510714798
 Rigidbody:
   m_ObjectHideFlags: 0

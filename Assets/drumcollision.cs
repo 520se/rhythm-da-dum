@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DrumCollision : MonoBehaviour
 {
+
     private Dictionary<string, bool> fingerCollisionStates = new Dictionary<string, bool>();
     private Dictionary<string, float> lastCollisionTimes = new Dictionary<string, float>();
 
@@ -15,8 +16,6 @@ public class DrumCollision : MonoBehaviour
     public float multipleCollisionTime = 0.1f; // 여러 손가락이 동시에 충돌할 때의 시간 간격
     private bool canPlaySound = true;
 
-    private float globalLastCollisionTime = -1f;
-
     public Transform leftJudgementLine;
     public Transform rightJudgementLine;
     public float perfectThreshold = 0.1f;
@@ -24,7 +23,18 @@ public class DrumCollision : MonoBehaviour
     public float goodThreshold = 0.3f;
     public float collisionThreshold = 0.4f; // 추가된 변수
 
+    public GameObject perfectPrefab;
+    public GameObject greatPrefab;
+    public GameObject goodPrefab;
+    public GameObject badPrefab;
+
+    public int perfectscore = 50;
+    public int greatscore = 30;
+    public int goodscore = 10;
+    public int badscore = 0;
+
     private HashSet<GameObject> judgedNotes = new HashSet<GameObject>(); // 이미 판정된 노트들을 추적
+
 
     void Start()
     {
@@ -135,34 +145,46 @@ public class DrumCollision : MonoBehaviour
                     if (distanceToJudgementLine <= perfectThreshold)
                     {
                         Debug.Log("Perfect!");
-                        // Handle perfect score
+                        SpawnJudgementPrefab(perfectPrefab);
                         judgedNotes.Add(note);
                         Destroy(note);
+                        GameManager.instance.addScore(perfectscore);
+                        GameManager.instance.noteResult(0);
                         noteHit = true;
                         break;
                     }
                     else if (distanceToJudgementLine <= greatThreshold)
                     {
                         Debug.Log("Great!");
-                        // Handle great score
+                        SpawnJudgementPrefab(greatPrefab);
                         judgedNotes.Add(note);
                         Destroy(note);
+                        GameManager.instance.addScore(greatscore);
+                        GameManager.instance.noteResult(1);
                         noteHit = true;
                         break;
                     }
                     else if (distanceToJudgementLine <= goodThreshold)
                     {
                         Debug.Log("Good!");
-                        // Handle good score
+                        SpawnJudgementPrefab(goodPrefab);
                         judgedNotes.Add(note);
                         Destroy(note);
+                        GameManager.instance.addScore(goodscore);
+                        GameManager.instance.noteResult(2);
                         noteHit = true;
                         break;
                     }
                     else
                     {
                         Debug.Log("Bad!");
-                        // Handle bad score
+                        SpawnJudgementPrefab(badPrefab);
+                        judgedNotes.Add(note);
+                        Destroy(note);
+                        GameManager.instance.addScore(badscore);
+                        GameManager.instance.noteResult(3);
+                        noteHit = true;
+                        break;
                     }
                 }
             }
@@ -174,6 +196,15 @@ public class DrumCollision : MonoBehaviour
     public void HandleMissedNote(GameObject note)
     {
         Debug.Log("Bad! (Missed Note)");
+        SpawnJudgementPrefab(badPrefab);
         // Handle missed note logic here if needed
     }
+    
+
+    private void SpawnJudgementPrefab(GameObject prefab)
+    {
+        GameObject effect = Instantiate(prefab);
+        Destroy(effect, 0.25f);
+    }
+
 }

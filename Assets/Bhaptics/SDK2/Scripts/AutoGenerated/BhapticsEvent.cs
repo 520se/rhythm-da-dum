@@ -17,20 +17,20 @@ namespace Bhaptics.SDK2
     public class BhapticsEvent
     {
         
-        public const string LEFT_MIDDLE = "left_middle";
+        public const string R_LITTLE = "r_little";
         
-        public const string RIGHT_INDEX = "right_index";
+        public const string R_INDEX = "r_index";
         
-        public const string RIGHT_MIDDLE = "right_middle";
+        public const string R_MIDDLE = "r_middle";
         
-        public const string LEFT_RING = "left_ring";
+        public const string L_LITTLE = "l_little";
         
-        public const string LEFT_INDEX = "left_index";
+        public const string R_RING = "r_ring";
         
-        public const string LEFT_LITTLE = "left_little";
+        public const string L_RING = "l_ring";
         
-        public const string RIGHT_RING = "right_ring";
+        public const string L_INDEX = "l_index";
         
-        public const string RIGHT_LITTLE = "right_little";
+        public const string L_MIDDLE = "l_middle";
     }
 }

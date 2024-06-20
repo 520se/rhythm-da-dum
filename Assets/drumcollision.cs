@@ -41,7 +41,7 @@ public class DrumCollision : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         // Initialize finger collision states and last collision times
-        string[] fingers = { "L_index", "L_middle", "L_ring", "L_little", "R_index", "R_middle", "R_ring", "R_little" };
+        string[] fingers = { "l_index", "l_middle", "l_ring", "l_little", "r_index", "r_middle", "r_ring", "r_little" };
         foreach (string finger in fingers)
         {
             fingerCollisionStates[finger] = false;
@@ -60,11 +60,11 @@ public class DrumCollision : MonoBehaviour
             if (!fingerCollisionStates[tag])
             {
                 fingerCollisionStates[tag] = true;
-                if (tag.StartsWith("L"))
+                if (tag.StartsWith("l"))
                 {
                     hand = "L";
                 }
-                else if (tag.StartsWith("R"))
+                else if (tag.StartsWith("r"))
                 {
                     hand = "R";
                 }

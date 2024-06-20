@@ -18,6 +18,14 @@ TagManager:
   - R
   - L
   - Note
+  - l_index
+  - l_middle
+  - l_ring
+  - l_little
+  - r_index
+  - r_middle
+  - r_ring
+  - r_little
   layers:
   - Default
   - TransparentFX

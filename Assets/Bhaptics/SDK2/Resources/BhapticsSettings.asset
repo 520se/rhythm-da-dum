@@ -15,62 +15,62 @@ MonoBehaviour:
   appName: test1
   appId: 66026d139b48972bdd8593d1
   apiKey: M7FY8so6NAIwhHlgBfjC
-  lastDeployVersion: 8
+  lastDeployVersion: 9
   eventData:
   - durationMillis: 140
-    key: left_middle
-    description: left_middle
-    isAudio: 0
-    updateTime: 1715801779505
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: right_index
-    description: right_index
-    isAudio: 0
-    updateTime: 1716489299399
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: right_middle
-    description: right_middle
-    isAudio: 0
-    updateTime: 1716489322181
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: left_ring
-    description: left_ring
-    isAudio: 0
-    updateTime: 1716488899866
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: left_index
-    description: left_index
-    isAudio: 0
-    updateTime: 1715801757155
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: left_little
-    description: left_little
-    isAudio: 0
-    updateTime: 1716488933014
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: right_ring
-    description: right_ring
-    isAudio: 0
-    updateTime: 1716489335275
-    positions:
-    - Gloves
-  - durationMillis: 140
-    key: right_little
+    key: r_little
     description: right_little
     isAudio: 0
-    updateTime: 1716489350367
+    updateTime: 1718897101828
     positions:
     - Gloves
-  defaultDeploy: '{"status":true,"message":{"id":"rUCUJxvqg7ssGp0a9XDT","createTime":1716489472761,"name":"test1","creator":"YOKRJlGRGzghK8v0AbKsS6psVaQ2","workspaceId":"66026d139b48972bdd8593d1","version":8,"disableValidation":false,"hapticMappings":[{"enable":true,"intensity":100,"key":"left_middle","category":"glove","description":"left_middle","updateTime":1715801779505,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point6_Left_Glove_7f12e0a5","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":2}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"right_index","category":"glove","description":"right_index","updateTime":1716489299399,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point5_Right_Glove_673cc08e","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":1}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"right_middle","category":"glove","description":"right_middle","updateTime":1716489322181,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point6_Right_Glove_cc3d8f1a","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":2}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"left_ring","category":"glove","description":"left_ring","updateTime":1716488899866,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point7_Left_Glove_336e9ff0","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":3}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"left_index","category":"glove","description":"left_index","updateTime":1715801757155,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point5_Left_Glove_0f96640b","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":1}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"left_little","category":"glove","description":"left_little","updateTime":1716488933014,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point8_Left_Glove_1f784ed7","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":4}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"right_ring","category":"glove","description":"right_ring","updateTime":1716489335275,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point7_Right_Glove_30620447","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":3}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"right_little","category":"glove","description":"right_little","updateTime":1716489350367,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point8_Right_Glove_f0ae19de","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":4}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140}],"categoryOptions":["glove"],"description":""},"errorMessage":null,"timestamp":1716489484761,"code":200}'
+  - durationMillis: 140
+    key: r_index
+    description: right_index
+    isAudio: 0
+    updateTime: 1718897116673
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: r_middle
+    description: right_middle
+    isAudio: 0
+    updateTime: 1718897113104
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: l_little
+    description: left_little
+    isAudio: 0
+    updateTime: 1718897133210
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: r_ring
+    description: right_ring
+    isAudio: 0
+    updateTime: 1718897109716
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: l_ring
+    description: left_ring
+    isAudio: 0
+    updateTime: 1718897137989
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: l_index
+    description: left_index
+    isAudio: 0
+    updateTime: 1718897146877
+    positions:
+    - Gloves
+  - durationMillis: 140
+    key: l_middle
+    description: left_middle
+    isAudio: 0
+    updateTime: 1718897143415
+    positions:
+    - Gloves
+  defaultDeploy: '{"status":true,"message":{"id":"OenQkrnmvPQbfwW5Eq2F","createTime":1718897154750,"name":"test1","creator":"YOKRJlGRGzghK8v0AbKsS6psVaQ2","workspaceId":"66026d139b48972bdd8593d1","version":9,"disableValidation":false,"hapticMappings":[{"enable":true,"intensity":100,"key":"r_little","category":"glove","description":"right_little","updateTime":1718897101828,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point8_Right_Glove_614b3b95","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":4}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"r_index","category":"glove","description":"right_index","updateTime":1718897116673,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point5_Right_Glove_dba2cba1","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":1}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"r_middle","category":"glove","description":"right_middle","updateTime":1718897113104,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point6_Right_Glove_f539d223","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":2}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"l_little","category":"glove","description":"left_little","updateTime":1718897133210,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point8_Left_Glove_8e09ffd5","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":4}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"r_ring","category":"glove","description":"right_ring","updateTime":1718897109716,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point7_Right_Glove_1056d1f5","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":3}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"l_ring","category":"glove","description":"left_ring","updateTime":1718897137989,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point7_Left_Glove_d12c1c76","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":3}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"l_index","category":"glove","description":"left_index","updateTime":1718897146877,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point5_Left_Glove_d7c3cb3b","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":1}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140},{"enable":true,"intensity":100,"key":"l_middle","category":"glove","description":"left_middle","updateTime":1718897143415,"tactFilePatterns":[{"position":"LeftGlove","tactFile":{"name":"Point6_Left_Glove_92192df9","tracks":[{"enable":true,"effects":[{"name":"","offsetTime":150,"startTime":0,"modes":{"GloveR":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"NONE","pointList":[]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"PATH_MODE"},"GloveL":{"dotMode":{"dotConnected":false,"feedback":[{"startTime":0,"endTime":150,"playbackType":"FADE_OUT","pointList":[{"intensity":1.0,"index":2}]}]},"pathMode":{"feedback":[{"movingPattern":"CONST_SPEED","playbackType":"NONE","visible":true,"pointList":[]}]},"mode":"DOT_MODE"}}}]}],"layout":{"name":"Glove","type":"Glove","layouts":null}}}],"audioFilePatterns":[],"eventTime":140}],"categoryOptions":["glove"],"description":""},"errorMessage":null,"timestamp":1718897164766,"code":200}'

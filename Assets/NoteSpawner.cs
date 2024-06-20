@@ -28,8 +28,6 @@ public class NoteSpawner : MonoBehaviour
     private int currentNoteIndex = 0;
     private bool isSongStarted = false;
 
-    public GameManager gameManager;
-
     void Start()
     {
 
@@ -67,9 +65,9 @@ public class NoteSpawner : MonoBehaviour
         if (isSongStarted && !audioSource.isPlaying)
         {
             isSongStarted = false;
-            if (gameManager != null)
+            if (GameManager.instance != null)
             {
-                gameManager.isSongFinished = true;
+                GameManager.instance.isSongFinished = true;
                 Debug.Log("Song finished. GameManager's isSongFinished set to true.");
             }
         }

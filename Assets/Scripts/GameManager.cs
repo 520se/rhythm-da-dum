@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; // 싱글톤을 할당할 전역 변수
     public bool isSongFinished = false; // 음악 종료
     public TMP_Text scoreText;
+    public TMP_Text CurrentScore;
     public TMP_Text perfect;
     public TMP_Text great;
     public TMP_Text good;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         score += noteScore;
         scoreText.text = score.ToString();
+        CurrentScore.text = score.ToString(); 
     }
 
     public void noteResult(int judgement)

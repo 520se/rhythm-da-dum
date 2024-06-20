@@ -197,6 +197,7 @@ public class DrumCollision : MonoBehaviour
     {
         Debug.Log("Bad! (Missed Note)");
         SpawnJudgementPrefab(badPrefab);
+        GameManager.instance.noteResult(3);
         // Handle missed note logic here if needed
     }
     

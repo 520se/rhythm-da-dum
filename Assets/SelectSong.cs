@@ -8,32 +8,32 @@ public class SelectSong : MonoBehaviour
     public NoteSpawner noteSpawner;
     public AudioSource audioSource;
 
-    public StatefulInteractable volcanoButton;
-    public StatefulInteractable songButton2;
-    public StatefulInteractable songButton3;
+    public StatefulInteractable songButton1_volcano;
+    public StatefulInteractable songButton2_redradish;
+    public StatefulInteractable songButton3_funkycarioca;
     public StatefulInteractable songButton4;
 
     private Dictionary<string, string> songFilePaths = new Dictionary<string, string>
     {
         { "volcano", "Assets/NotePatterns/volcano.txt" },
-        { "Song2", "Assets/NotePatterns/song2.txt" },
-        { "Song3", "Assets/NotePatterns/song3.txt" },
+        { "redradish", "Assets/NotePatterns/redradish.txt" },
+        { "funkycarioca", "Assets/NotePatterns/funkycarioca.txt" },
         { "Song4", "Assets/NotePatterns/song4.txt" }
     };
 
     private Dictionary<string, string> audioFilePaths = new Dictionary<string, string>
     {
         { "volcano", "Audio/volcano" },
-        { "Song2", "Audio/Song2" },
-        { "Song3", "Audio/Song3" },
+        { "redradish", "Audio/redradish" },
+        { "funkycarioca", "Audio/funkycarioca" },
         { "Song4", "Audio/Song4" }
     };
 
     void Start()
     {
-        volcanoButton.OnClicked.AddListener(() => OnSongSelected("volcano"));
-        songButton2.OnClicked.AddListener(() => OnSongSelected("Song2"));
-        songButton3.OnClicked.AddListener(() => OnSongSelected("Song3"));
+        songButton1_volcano.OnClicked.AddListener(() => OnSongSelected("volcano"));
+        songButton2_redradish.OnClicked.AddListener(() => OnSongSelected("redradish"));
+        songButton3_funkycarioca.OnClicked.AddListener(() => OnSongSelected("funkycarioca"));
         songButton4.OnClicked.AddListener(() => OnSongSelected("Song4"));
     }
 
